@@ -1,0 +1,225 @@
+<div class="container-fluid mt-4">
+    <div class="text-center">
+        <h2>Student Scholarship Scheme</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>S.no</th>
+                    <th>Student Name</th>
+                    <th>Mobile No</th>
+                    <th>Aadhar No.</th>
+                    <th>SSC Type</th>
+                    <th>H.T Number</th>
+                    <th>Passed Year</th>
+                    <th>Status</th>
+                   <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let k of ss index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{k.studentname}}</td>
+                    <td>{{k.phoneno}}</td>
+                    <td>{{k.aadharno}}</td>
+                    <td>{{k.ssctype}}</td>
+                    <td>{{k.hallticket}}</td>
+                    <td>{{k.passyear}}</td>
+                    <td>{{k.status}}</td>
+                    <td>
+                        <i class="bi bi-arrows-angle-expand" data-bs-toggle="modal" data-bs-target="#kl" (click)="viewSS(k)" style="font-size: 1.5em; color:blue" ></i>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+<div class="modal fade bd-example-modal-xl" id="kl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document" style="width: 100%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Study ScholarShip Scheme</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-color: pink;">
+          
+           
+            <form [formGroup]="ssForm">
+                <div class="row mb-4">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Student Full Name:</label>
+                            <input type="text" class="form-control" formControlName="studentname">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Father Name:</label>
+                            <input type="text" class="form-control" formControlName="fathername">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Mobile Number:</label>
+                            <input type="number" class="form-control" formControlName="phoneno">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Aadhar Number:</label>
+                            <input type="number" class="form-control" formControlName="aadharno">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-sm-3 align-self-center">
+                        <div class="form-group">
+                            <label>Gender:</label> &nbsp;
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="gender" value="male">
+                            <label class="form-check-label">Male</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="gender" value="female">
+                            <label class="form-check-label">Female</label>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Date of Birth:</label>
+                            <input type="date" class="form-control" formControlName="dob">
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3 align-self-center">
+                        <div class="form-group ">
+                            <label>SSC Type:</label> &nbsp;
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="ssctype" value="regular">
+                            <label class="form-check-label">Regular</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="ssctype" value="supply">
+                            <label class="form-check-label">Supply</label>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>HallTicket Number:</label>
+                            <input type="number" class="form-control" formControlName="hallticket">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Pass Year:</label>
+                            <select class="form-select" formControlName="passyear">
+                                <option value="2014">2014</option>
+                                <option value="2015">2015</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>University Name:</label>
+                            <select class="form-select" formControlName="universityname">
+                                <option value="JNTUH">JNTUH</option>
+                                <option value="ShathavahanaUniversity">ShathavahanaUniversity</option>
+                                <option value="OsmaniaUniversity">OsmaniaUniversity</option>
+                                <option value="KakathiyaUniversity">KakathiyaUniversity</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>College Name:</label>
+                            <input type="text" class="form-control" formControlName="collegename">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Course:</label>
+                            <input type="text" class="form-control" formControlName="course">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>College Address:</label>
+                            <input type="text" class="form-control" formControlName="address">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Select Bank:</label>
+                            <select class="form-select" formControlName="bankname">
+                                <option value="SBI">SBI</option>
+                                <option value="UNION">UNION</option>
+                                <option value="HDFC">HDFC</option>
+                                <option value="INDIAN">INDIAN</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Branch Name:</label>
+                            <input type="text" class="form-control" formControlName="branchname">
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <label>Account Number:</label>
+                            <input type="number" class="form-control" formControlName="accountno">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-4">
+                        <img src="{{aCopy}}" style="width: 100%;">
+                    </div>
+                    <div class="col-sm-4" >
+                        <img src="{{pBook}}"  style="width: 100%;">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="{{casteLink}}" style="width: 100%;">
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-sm-3 ms-auto">
+                        <div class="form-group">
+                            <label>Address:</label>
+                           <select class="form-select" formControlName="status">
+                            <option value="Pending">Pending</option>
+                            <option value="Accept">Accept</option>
+                            <option value="Reject">Reject</option>
+                           </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 mt-4">
+                        <button class="btn btn-primary" (click)="changeStatus()">Change Status</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

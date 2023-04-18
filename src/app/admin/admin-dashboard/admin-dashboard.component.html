@@ -1,0 +1,45 @@
+<nav class="navbar navbar-light navbar-expand-lg px-2 py-0" style="width: 100%; background-color: #FC44DD;">
+    <a  class="navbar-brand text-light">
+        <img src="../../assets/images/tg-logo.png" height="60rem">
+        TG Govt Schemes
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ms-auto" >
+          <li clas="navbar-item">
+            <a routerLink="admin-view-users" routerLinkActive="active" class="nav-link">View-Users</a>
+            </li>
+          <li clas="navbar-item">
+            <a routerLink="admin-add-scheme" routerLinkActive="active" class="nav-link">Add Schemes</a>
+        </li>  
+        <li clas="navbar-item">
+            <a routerLink="admin-view-scheme" routerLinkActive="active" class="nav-link">View Schemes</a>
+        </li>  
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">View Schemes Allication</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="admin-view-kl" routerLinkActive="active">Kalyana Laxmi Scheme</a></li>
+              <li><a class="dropdown-item" routerLink="admin-view-ss" routerLinkActive="active">Student ScholarShip Scheme</a></li>
+              <li><a class="dropdown-item" routerLink="admin-view-oap" routerLinkActive="active">Old Age Pension Scheme</a></li>
+              <li><a class="dropdown-item" routerLink="admin-view-dbr" routerLinkActive="active">Double Bed Room Scheme</a></li>
+
+            </ul>
+          </li>
+        <li clas="navbar-item">
+            <a routerLink="admin-view-feedback" routerLinkActive="active" class="nav-link">View Feedback</a>
+        </li>
+        <li clas="navbar-item">
+            <a routerLink="admin-change-pwd" routerLinkActive="active" class="nav-link">Change pwd</a>
+        </li>  
+        <li clas="navbar-item">
+            <a routerLink="user-login" routerLinkActive="active" class="nav-link" (click)="adminLogout()">Logout</a>
+        </li>  
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>

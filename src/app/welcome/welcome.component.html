@@ -1,0 +1,26 @@
+<nav class="navbar navbar-light navbar-expand-lg px-2 py-0" style="width: 100%; background-color: #FC44DD;">
+    <a  class="navbar-brand text-light">
+        <img src="../../assets/images/tg-logo.png" height="60rem">
+        TG Govt Schemes
+    </a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ms-auto" >
+        <li clas="navbar-item">
+          <a routerLink="#" class="nav-link">Home</a>
+          </li>
+          <li clas="navbar-item">
+            <a routerLink="admin-login" routerLinkActive="active" class="nav-link">Admin-login</a>
+            </li>
+          <li clas="navbar-item">
+            <a routerLink="user-login" routerLinkActive="active" class="nav-link">User-login</a>
+        </li>  
+      </ul>
+    </div>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>

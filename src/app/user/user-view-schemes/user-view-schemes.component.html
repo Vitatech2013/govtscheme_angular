@@ -1,0 +1,32 @@
+<div class="container-fluid mt-4">
+    <div class="text-center">
+        <h2>Schemes-List</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>S.No</th>
+                    <th>Scheme Name</th>
+                    <th>Starting Date</th>
+                    <th>Ending Date</th>
+                    <th>Cast Type</th>
+                    <th>Required Documents</th>
+                    <th>About Schemes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of schemes index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{s.schemename}}</td>
+                    <td>{{s.startdate}}</td>
+                    <td>{{s.enddate}}</td>
+                    <td>{{s.castetype}}</td>
+                    <td>{{s.requireddocuments}}</td>
+                    <td>{{s.aboutscheme}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

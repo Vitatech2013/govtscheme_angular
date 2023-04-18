@@ -1,0 +1,133 @@
+<div class="container mt-2">
+    <h2 class="text-center">Apply Double Bed Room Scheme</h2>
+    <div class="col-sm-10 m-auto">
+        <div class="card my-4">
+            <div class="card-body p-4">
+                <form [formGroup]="dbrForm" (ngSubmit)="applyDBR()">
+                <div class="row mb-4">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Full Name:</label>
+                            <input type="text" class="form-control" formControlName="name">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Age:</label>
+                            <input type="text" class="form-control" formControlName="age">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 align-self-center">
+                       
+                            <div class="form-group">
+                                <label>Gender:</label> &nbsp;
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName="gender" value="male">
+                                <label class="form-check-label">Male</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName="gender" value="female">
+                                <label class="form-check-label">Female</label>
+                              </div>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Mobile No:</label>
+                            <input type="number" class="form-control" formControlName="phoneno">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Aadhar No:</label>
+                            <input type="number" class="form-control" formControlName="aadharno">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Occupation:</label>
+                           <select class="form-select" formControlName="occupation">
+                            <option value="Farmer">Farmer</option>
+                            <option value="Business">Business</option>
+                            <option value="Employee">Employee</option>
+                            <option value="Labour">Labour</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Religion:</label>
+                           <select class="form-select" formControlName="religion">
+                            <option value="HINDHU">HINDHU</option>
+                                <option value="MUSLIM">MUSLIM</option>
+                                <option value="CRYSTIAN">CRYSTIAN</option>
+                                <option value="OTHER">OTHER</option>
+                           </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Caste:</label>
+                           <select class="form-select" formControlName="caste">
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                                <option value="BC">BC</option>
+                                <option value="Other">Other</option>
+                           </select>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label>Resident Type:</label>
+                           <select class="form-select" formControlName="residenttype">
+                                <option value="OwnHouse">OwnHouse</option>
+                                <option value="Rented">Rented</option>
+                                <option value="Hut">Hut</option>
+                                <option value="Other">Other</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-sm-6 m-auto">
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <textarea class="form-control" formControlName="address"></textarea>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row my-4 ">
+                    <div class="col-sm-10 m-auto">
+                      <div class="form-group row my-4">
+                        <label class="col-sm-2 col-form-label">Caste Cerificate:</label>
+                        <div class="col-sm-6">
+                          <input type="file" class="form-control" accept="image/*" formControlName="castecertificate" (change)="uploadCaste($event)">
+                        </div>
+                      </div>
+                      <div class="form-group row my-4">
+                        <label class="col-sm-2 col-form-label">Ration Card:</label>
+                        <div class="col-sm-6">
+                          <input type="file" class="form-control" accept="image/*" formControlName="rationcard" (change)="uploadRationCard($event)">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Apply For Double Bed Room</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+</div> 

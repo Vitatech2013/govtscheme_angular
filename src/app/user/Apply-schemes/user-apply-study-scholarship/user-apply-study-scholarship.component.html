@@ -1,0 +1,177 @@
+<div class="container mt-2">
+   <h2 class="text-center">Apply Study Scholarship</h2>
+    <div class="card mt-4">
+            <div class="card-body mt-4 p-4">
+                <form [formGroup]="ssForm" (ngSubmit)="applySS()">
+                    <div class="row mb-4">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Student Full Name:</label>
+                                <input type="text" class="form-control" formControlName="studentname">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Father Name:</label>
+                                <input type="text" class="form-control" formControlName="fathername">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Mobile Number:</label>
+                                <input type="number" class="form-control" formControlName="phoneno">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Aadhar Number:</label>
+                                <input type="number" class="form-control" formControlName="aadharno">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-3 align-self-center">
+                            <div class="form-group">
+                                <label>Gender:</label> &nbsp;
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName="gender" value="male">
+                                <label class="form-check-label">Male</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName="gender" value="female">
+                                <label class="form-check-label">Female</label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Date of Birth:</label>
+                                <input type="date" class="form-control" formControlName="dob">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3 align-self-center">
+                            <div class="form-group ">
+                                <label>SSC Type:</label> &nbsp;
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName="ssctype" value="regular">
+                                <label class="form-check-label">Regular</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" formControlName="ssctype" value="supply">
+                                <label class="form-check-label">Supply</label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>HallTicket Number:</label>
+                                <input type="number" class="form-control" formControlName="hallticket">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Pass Year:</label>
+                                <select class="form-select" formControlName="passyear">
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>University Name:</label>
+                                <select class="form-select" formControlName="universityname">
+                                    <option value="JNTUH">JNTUH</option>
+                                    <option value="ShathavahanaUniversity">ShathavahanaUniversity</option>
+                                    <option value="OsmaniaUniversity">OsmaniaUniversity</option>
+                                    <option value="KakathiyaUniversity">KakathiyaUniversity</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>College Name:</label>
+                                <input type="text" class="form-control" formControlName="collegename">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Course:</label>
+                                <input type="text" class="form-control" formControlName="course">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>College Address:</label>
+                                <input type="text" class="form-control" formControlName="address">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Select Bank:</label>
+                                <select class="form-select" formControlName="bankname">
+                                    <option value="SBI">SBI</option>
+                                    <option value="UNION">UNION</option>
+                                    <option value="HDFC">HDFC</option>
+                                    <option value="INDIAN">INDIAN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Branch Name:</label>
+                                <input type="text" class="form-control" formControlName="branchname">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label>Account Number:</label>
+                                <input type="number" class="form-control" formControlName="accountno">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row my-4 ">
+                        <div class="col-sm-8 m-auto">
+    
+                          <div class="form-group row mt-4">
+                            <label class="col-sm-2 col-form-label">Aadhar Copy:</label>
+                            <div class="col-sm-6">
+                              <input type="file" class="form-control" accept="image/*" formControlName="aadharcopy" (change)="uploadAadhar($event)">
+                            </div>
+                          </div> 
+
+                          <div class="form-group row mt-4">
+                            <label class="col-sm-2 col-form-label">Passbook Copy:</label>
+                            <div class="col-sm-6">
+                              <input type="file" class="form-control" accept="image/*" formControlName="passbook" (change)="uploadPassbook($event)">
+                            </div>
+                          </div>
+
+                          <div class="form-group row my-4">
+                            <label class="col-sm-2 col-form-label">Caste Cerificate:</label>
+                            <div class="col-sm-6">
+                              <input type="file" class="form-control" accept="image/*" formControlName="castecertificate" (change)="uploadCast($event)">
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-4">
+                        <button type="submit" class="btn btn-primary">Apply For Student ScholarShip</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>

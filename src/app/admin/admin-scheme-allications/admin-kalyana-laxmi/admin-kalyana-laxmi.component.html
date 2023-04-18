@@ -1,0 +1,409 @@
+<div class="container-fluid mt-4">
+    <div class="text-center">
+        <h2>Kalyana Laxmi Scheme</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>S.no</th>
+                    <th>BridalName</th>
+                    <th>Bridal Mother Name</th>
+                    <th>Bridal Aadhar</th>
+                    <th>GroomName</th>
+                    <th>GroomFather</th>
+                    <th>GroomMobile</th>
+                    <th>GroomAadhar</th>
+                    <th>MarriageDate</th>
+                   <th> MarriagePlace</th>
+                   <th>Status</th>
+                   <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let k of kl index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{k.bridalname}}</td>
+                    <td>{{k.bridalmothername}}</td>
+                    <td>{{k.bridalaadharno}}</td>
+                    <td>{{k.bridalgroomname}}</td>
+                    <td>{{k.bridalgroomfathername}}</td>
+                    <td>{{k.bridalgroomphone}}</td>
+                    <td>{{k.bridalgroomaadharno}}</td>
+                    <td>{{k.marriagedate}}</td>
+                    <td>{{k.marriageplace}}</td>
+                    <td>{{k.status}}</td>
+                    <td>
+                        <i class="bi bi-arrows-angle-expand" data-bs-toggle="modal" data-bs-target="#kl" (click)="viewKalayana(k)" style="font-size: 1.5em; color:blue"></i>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+<div class="modal fade bd-example-modal-xl" id="kl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document" style="width: 100%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Kalyana Laxmi Scheme</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-color: pink;">
+            <div class="container-fluid">
+                <form [formGroup]="klForm" >
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                        <div class="card-body">
+                            <h4 class="text-center">Bride Details</h4>
+                            <div class="row mt-4">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Bridal Name:</label>
+                                        <input type="text" class="form-control" formControlName="bridalname">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Father Name:</label>
+                                        <input type="text" class="form-control" formControlName="bridalfathername">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Mother Name:</label>
+                                        <input type="text" class="form-control" formControlName="bridalmothername">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>DOB:</label>
+                                        <input type="date" class="form-control" formControlName="bridaldob">
+                                       </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4 mb-4">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Qualification:</label>
+                                       <select class="form-select" formControlName="bridalqualification">
+                                        <option value="AnyDegree">Any Degree</option>
+                                        <option value="MSC">MSC</option>
+                                        <option value="MCA">MCA</option>
+                                        <option value="B.Tech">B.Tech</option>
+                                       </select>
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Mobile Number:</label>
+                                        <input type="number" class="form-control" formControlName="bridalphoneno">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>aadhar Number:</label>
+                                        <input type="text" class="form-control" formControlName="bridalaadharno">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Mother Aadhar Number:</label>
+                                        <input type="text" class="form-control" formControlName="bridalmotheraadharno">
+                                       </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+            
+            
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                            <div class="card-body">
+                            <h4 class="text-center">Income & Caste Details</h4>
+                            <div class="row mt-4 mb-4">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Bridal Cast:</label>
+                                       <select class="form-select" formControlName="bridalcaste">
+                                        <option value="SC">SC</option>
+                                        <option value="ST">ST</option>
+                                        <option value="BC">BC</option>
+                                        <option value="Other">Other</option>
+                                       </select>
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Income Certificate Number:</label>
+                                        <input type="text" class="form-control" formControlName="bridalincomeno">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Total Income:</label>
+                                        <input type="text" class="form-control" formControlName="bridaltotallincome">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Caste Certificate Number:</label>
+                                        <input type="text" class="form-control" formControlName="bridalcasteno">
+                                       </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                            <div class="card-body">
+                                <h4 class="text-center">Address</h4>
+                                <div class="row my-4">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Select District:</label>
+                                           <select class="form-select" formControlName="bridaldistrict">
+                                            <option *ngFor="let d of districts" value="{{d}}">{{d}}</option>
+                                           </select>
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Select Mandal:</label>
+                                            <input type="text" class="form-control" formControlName="bridalmondel">
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Village Name:</label>
+                                            <input type="text" class="form-control" formControlName="bridalvillage">
+                                           </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                            <div class="card-body">
+                                <h4 class="text-center">Bride Mother Bank Account Details:</h4>
+                                <div class="row my-4">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Account Holder Name:</label>
+                                            <input type="text" class="form-control" formControlName="holdername">
+                                           </div> 
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Account number:</label>
+                                            <input type="number" class="form-control" formControlName="bridalmotheraccno">
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Select District:</label>
+                                           <select class="form-select" formControlName="bankdistrict">
+                                            <option *ngFor="let d of districts" value="{{d}}">{{d}}</option>
+                                           </select>
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Select Bank:</label>
+                                           <select class="form-select" formControlName="bankname">
+                                            <option value="SBI">SBI</option>
+                                            <option value="HDFC">HDFC</option>
+                                            <option value="INDIAN">INDIAN</option>
+                                            <option value="UNION">UNION</option>
+                                           </select>
+                                           </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label>Branch name:</label>
+                                            <input type="text" class="form-control" formControlName="branchname">
+                                           </div> 
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                        <div class="card-body">
+                            <h4 class="text-center">Bride Groom Details</h4>
+                            <div class="row mt-4">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Bridal Groom Name:</label>
+                                        <input type="text" class="form-control" formControlName="bridalgroomname">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Father Name:</label>
+                                        <input type="text" class="form-control" formControlName="bridalgroomfathername">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Mother Name:</label>
+                                        <input type="text" class="form-control" formControlName="bridalgroommothername">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>DOB:</label>
+                                        <input type="date" class="form-control" formControlName="bridalgroomdob">
+                                       </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4 mb-4">
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Qualification:</label>
+                                       <select class="form-select" formControlName="bridalgroomqualification">
+                                        <option value="AnyDegree">Any Degree</option>
+                                        <option value="MSC">MSC</option>
+                                        <option value="MCA">MCA</option>
+                                        <option value="B.Tech">B.Tech</option>
+                                       </select>
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Mobile Number:</label>
+                                        <input type="number" class="form-control" formControlName="bridalgroomphone"> 
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>aadhar Number:</label>
+                                        <input type="text" class="form-control" formControlName="bridalgroomaadharno">
+                                       </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label>Father Aadhar Number:</label>
+                                        <input type="text" class="form-control" formControlName="bridalgroomafatheradharno">
+                                       </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                            <div class="card-body">
+                                <h4 class="text-center">Address</h4>
+                                <div class="row my-4">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Select District:</label>
+                                           <select class="form-select" formControlName="bridalgroomdistrict">
+                                            <option *ngFor="let d of districts" value="{{d}}">{{d}}</option>
+                                           </select>
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Select Mandal:</label>
+                                           <input type="text" class="form-control" formControlName="bridalgroommandel">
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Village Name:</label>
+                                            <input type="text" class="form-control" formControlName="bridalgroomvillage">
+                                           </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-4">
+                        <div class="col-sm-10 m-auto">
+                            <div class="card-body">
+                                <h4 class="text-center">Marriage details:</h4>
+                                <div class="row my-4">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>marriage Date:</label>
+                                            <input type="date" class="form-control"  formControlName="marriagedate">
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Place:</label>
+                                            <input type="text" class="form-control" formControlName="marriageplace">
+                                           </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label>Address:</label>
+                                            <input type="text" class="form-control" formControlName="marriageaddress">
+                                           </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-sm-4">
+                            <img src="{{mCard}}" style="width:100%">
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="{{bPhoto}}" style="width:100%">
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="{{aCopy}}" style="width:100%">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-sm-4">
+                            <img src="{{pBook}}" style="width:100%">
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="{{caste}}" style="width:100%">
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-3 ms-auto">
+                            <div class="form-group">
+                                <label>Status:</label>
+                                <select class="form-select" formControlName="status">
+                                    <option value="Pending">Pending</option>
+                                    <option value="Accept">Accept</option>
+                                    <option value="Reject">Reject</option>
+                                </select>
+                               </div>
+                        </div>
+                        <div class="col-sm-2 mt-4 mb-4">
+                            <button class="btn btn-primary" data-bs-dismiss="modal" (click)="statusChange()">Change Status</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>

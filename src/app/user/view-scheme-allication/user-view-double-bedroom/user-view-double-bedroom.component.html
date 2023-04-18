@@ -1,0 +1,179 @@
+<div class="container-fluid mt-4">
+    <div class="text-center">
+        <h2>Double BedRoom Scheme</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Aadhar</th>
+                    <th>occupation</th>
+                    <th>Caste</th>
+                    <th>Resident Type</th>
+                    <th>Address</th>
+                   <th>Status</th>
+                   <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let d of dbr index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.phoneno}}</td>
+                    <td>{{d.aadharno}}</td>
+                    <td>{{d.occupation}}</td>
+                    <td>{{d.caste}}</td>
+                    <td>{{d.residenttype}}</td>
+                    <td>{{d.address}}</td>
+                    <td>{{d.status}}</td>
+                    <td>
+                        <i class="bi bi-arrows-angle-expand" data-bs-toggle="modal" data-bs-target="#kl" (click)="viewDBR(d)" style="font-size: 1.5em; color:blue" ></i>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+
+<div class="modal fade bd-example-modal-xl" id="kl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document" style="width: 100%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Double Bed Room Scheme</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-color: pink;">
+            <div class="container-fluid mt-2" >
+                <div class="col-sm-12 m-auto">
+                            <form [formGroup]="dbrForm">
+                            <div class="row mb-4">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Full Name:</label>
+                                        <input type="text" class="form-control" formControlName="name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Age:</label>
+                                        <input type="text" class="form-control" formControlName="age">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 align-self-center">
+                                   
+                                        <div class="form-group">
+                                            <label>Gender:</label> &nbsp;
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" formControlName="gender" value="male">
+                                            <label class="form-check-label">Male</label>
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" formControlName="gender" value="female">
+                                            <label class="form-check-label">Female</label>
+                                          </div>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+            
+                            <div class="row mb-4">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Mobile No:</label>
+                                        <input type="number" class="form-control" formControlName="phoneno">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Aadhar No:</label>
+                                        <input type="number" class="form-control" formControlName="aadharno">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Occupation:</label>
+                                       <select class="form-select" formControlName="occupation">
+                                        <option value="Farmer">Farmer</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Employee">Employee</option>
+                                        <option value="Labour">Labour</option>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="row mb-4">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Religion:</label>
+                                       <select class="form-select" formControlName="religion">
+                                        <option value="HINDHU">HINDHU</option>
+                                            <option value="MUSLIM">MUSLIM</option>
+                                            <option value="CRYSTIAN">CRYSTIAN</option>
+                                            <option value="OTHER">OTHER</option>
+                                       </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Caste:</label>
+                                       <select class="form-select" formControlName="caste">
+                                            <option value="SC">SC</option>
+                                            <option value="ST">ST</option>
+                                            <option value="BC">BC</option>
+                                            <option value="Other">Other</option>
+                                       </select>
+                                    </div>
+            
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Resident Type:</label>
+                                       <select class="form-select" formControlName="residenttype">
+                                            <option value="OwnHouse">OwnHouse</option>
+                                            <option value="Rented">Rented</option>
+                                            <option value="Hut">Hut</option>
+                                            <option value="Other">Other</option>
+                                       </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-sm-6 m-auto">
+                                    <div class="form-group">
+                                        <label>Address:</label>
+                                        <textarea class="form-control" formControlName="address"></textarea>
+                                    </div>
+                                </div>    
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-sm-6">
+                                    <img src="{{caste}}" style="width:100%">
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="{{ration}}" style="width:100%">
+                                </div>
+
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

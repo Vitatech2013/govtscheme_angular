@@ -1,0 +1,54 @@
+<nav class="navbar navbar-light navbar-expand-lg px-2 py-0" style="width: 100%; background-color: #FC44DD;">
+  <a  class="navbar-brand text-light">
+      <img src="../../assets/images/tg-logo.png" height="60rem">
+      TG Govt Schemes
+  </a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav ms-auto" >
+        <li clas="navbar-item">
+          <a routerLink="user-view-scheme" routerLinkActive="active" class="nav-link">View-Schemes</a>
+          </li>
+      
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Apply-Schemes</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="user-apply-kl" routerLinkActive="active">Kalyana Laxmi Scheme</a></li>
+              <li><a class="dropdown-item" routerLink="user-apply-ss" routerLinkActive="active">Student ScholarShip Scheme</a></li>
+              <li><a class="dropdown-item" routerLink="user-apply-oap" routerLinkActive="active">Old Age Pension Scheme</a></li>
+              <li><a class="dropdown-item" routerLink="user-apply-dbr" routerLinkActive="active">Double Bed Room Scheme</a></li>
+  
+            </ul>
+          </li>
+
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">View Schemes Allication</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="user-view-kl" routerLinkActive="active">Kalyana Laxmi Scheme</a></li>
+            <li><a class="dropdown-item" routerLink="user-view-ss" routerLinkActive="active">Student ScholarShip Scheme</a></li>
+            <li><a class="dropdown-item" routerLink="user-view-oap" routerLinkActive="active">Old Age Pension Scheme</a></li>
+            <li><a class="dropdown-item" routerLink="user-view-dbr" routerLinkActive="active">Double Bed Room Scheme</a></li>
+
+          </ul>
+        </li>
+      <li clas="navbar-item">
+          <a routerLink="user-send-feedback" routerLinkActive="active" class="nav-link">Send-Feedback</a>
+      </li>
+      <li clas="navbar-item">
+        <a routerLink="user-profile" routerLinkActive="active" class="nav-link">Profile</a>
+    </li>
+      <li clas="navbar-item">
+          <a routerLink="user-change-pwd" routerLinkActive="active" class="nav-link">Change-pwd</a>
+      </li>  
+      <li clas="navbar-item">
+          <a class="nav-link" (click)="userLogout()">Logout</a>
+      </li>  
+    </ul>
+  </div>
+</nav>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

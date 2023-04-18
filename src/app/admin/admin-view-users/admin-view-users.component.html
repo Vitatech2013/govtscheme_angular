@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <div class="text-center">
+        <h2>User-List</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="table-info">
+                <tr>
+                    <th>S.No</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Father Name</th>
+                    <th>Email-Id</th>
+                    <th>Mobile No.</th>
+                    <th>Aadhar No</th>
+                    <th>Occupation</th>
+                    <th>State</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let u of users index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{u.firstname}}</td>
+                    <td>{{u.lastname}}</td>
+                    <td>{{u.fathername}}</td>
+                    <td>{{u.Emailid}}</td>
+                    <td>{{u.mobileno}}</td>
+                    <td>{{u.aadharno}}</td>
+                    <td>{{u.occupation}}</td>
+                    <td>{{u.state}}</td>
+                    <td>{{u.address}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
